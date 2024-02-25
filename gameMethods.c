@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "pilha.h"
 #define NUM_DISCS 5
+#define NUM_TOWERS 3
 
 
 // Initializing the first stack with discs in descending order
@@ -14,13 +15,11 @@ void initializeInitialStack(Stack *initialStack)
 
 void printTowers(Stack *towers[])
 {
-	printf("Stack 1: \n");
-	printStackByIndex(towers, 0);
-	printf("\nStack 2: \n");
-	printStackByIndex(towers, 1);
-	printf("\nStack 3: \n");
-	printStackByIndex(towers, 2);
-
+	for (int i = 0; i < NUM_TOWERS; i++)
+	{
+		printf("Stack %d: \n", i+1);
+		printStackByIndex(towers, i);
+	}
 }
 
 int validateMove(Stack *source, Stack *destination)
